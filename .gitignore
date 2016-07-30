@@ -1,0 +1,6 @@
+# Java build output files
+target/
+
+# Code health/design health reports generated from an Eclipse plugin
+Metrics/
+
