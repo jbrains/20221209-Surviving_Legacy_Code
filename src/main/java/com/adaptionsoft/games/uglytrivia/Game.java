@@ -63,7 +63,7 @@ public class Game {
 						+ "'s new location is " 
 						+ places[currentPlayer]);
 				System.out.println("The category is " + currentCategory());
-				askQuestion();
+				if (true) askQuestion();
 			} else {
 				System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
 				isGettingOutOfPenaltyBox = false;
@@ -78,7 +78,7 @@ public class Game {
 					+ "'s new location is " 
 					+ places[currentPlayer]);
 			System.out.println("The category is " + currentCategory());
-			askQuestion();
+			if (true) askQuestion();
 		}
 		
 	}
