@@ -71,7 +71,6 @@ public class Game {
 				shouldAskQuestionToCurrentPlayer = false;
 				}
 
-			if (shouldAskQuestionToCurrentPlayer) askQuestion();
 		} else {
 
 			places[currentPlayer] = places[currentPlayer] + roll;
@@ -82,9 +81,9 @@ public class Game {
 					+ places[currentPlayer]);
 			System.out.println("The category is " + currentCategory());
 			shouldAskQuestionToCurrentPlayer = true;
-			if (shouldAskQuestionToCurrentPlayer) askQuestion();
 		}
 
+		if (shouldAskQuestionToCurrentPlayer) askQuestion();
 		shouldAskQuestionToCurrentPlayer = false;
 		if (shouldAskQuestionToCurrentPlayer) askQuestion();
 	}
