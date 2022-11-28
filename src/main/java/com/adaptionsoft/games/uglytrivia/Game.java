@@ -84,8 +84,6 @@ public class Game {
 		}
 
 		if (shouldAskQuestionToCurrentPlayer) askQuestion();
-		shouldAskQuestionToCurrentPlayer = false;
-		if (shouldAskQuestionToCurrentPlayer) askQuestion();
 	}
 
 	private void askQuestion() {
