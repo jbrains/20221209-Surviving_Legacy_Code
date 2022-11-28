@@ -14,10 +14,10 @@ import java.util.Random;
 public class LockdownJunkDrawer {
     private PrintStream stdout;
 
-    public static class GameRunner {
+    public static class ThreePlayerGameRunner {
         private final RandomizedGameEventSimulator randomizedGameEventSimulator;
 
-        public GameRunner(RandomizedGameEventSimulator randomizedGameEventSimulator) {
+        public ThreePlayerGameRunner(RandomizedGameEventSimulator randomizedGameEventSimulator) {
             this.randomizedGameEventSimulator = randomizedGameEventSimulator;
         }
 
@@ -77,7 +77,7 @@ public class LockdownJunkDrawer {
 
     private static void runGameAndReportResultsToStdout(int gameNumber) {
         System.out.println(String.format("----- begin game %d -----", gameNumber));
-        new GameRunner(new GameRunner.RandomizedGameEventSimulator(new Random(gameNumber))).runGame();
+        new ThreePlayerGameRunner(new ThreePlayerGameRunner.RandomizedGameEventSimulator(new Random(gameNumber))).runGame();
         System.out.println(String.format("----- end game %d -----", gameNumber));
     }
 
