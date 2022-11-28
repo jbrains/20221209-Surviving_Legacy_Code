@@ -51,7 +51,7 @@ public class Game {
 		System.out.println(players.get(currentPlayer) + " is the current player");
 		System.out.println("They have rolled a " + roll);
 
-		boolean shouldAskQuestionToCurrentPlayer = false;
+		boolean shouldAskQuestionToCurrentPlayer;
 		if (inPenaltyBox[currentPlayer]) {
 			if (roll % 2 != 0) {
 				isGettingOutOfPenaltyBox = true;
