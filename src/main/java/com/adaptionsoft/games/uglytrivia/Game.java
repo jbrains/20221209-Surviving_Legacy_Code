@@ -50,37 +50,40 @@ public class Game {
 	public void roll(int roll) {
 		System.out.println(players.get(currentPlayer) + " is the current player");
 		System.out.println("They have rolled a " + roll);
-		
+
 		if (inPenaltyBox[currentPlayer]) {
 			if (roll % 2 != 0) {
 				isGettingOutOfPenaltyBox = true;
-				
+
 				System.out.println(players.get(currentPlayer) + " is getting out of the penalty box");
 				places[currentPlayer] = places[currentPlayer] + roll;
 				if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
-				
-				System.out.println(players.get(currentPlayer) 
-						+ "'s new location is " 
+
+				System.out.println(players.get(currentPlayer)
+						+ "'s new location is "
 						+ places[currentPlayer]);
 				System.out.println("The category is " + currentCategory());
 				if (true) askQuestion();
 			} else {
 				System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
 				isGettingOutOfPenaltyBox = false;
+				if (false) askQuestion();
 				}
-			
+
+			if (false) askQuestion();
 		} else {
-		
+
 			places[currentPlayer] = places[currentPlayer] + roll;
 			if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
-			
-			System.out.println(players.get(currentPlayer) 
-					+ "'s new location is " 
+
+			System.out.println(players.get(currentPlayer)
+					+ "'s new location is "
 					+ places[currentPlayer]);
 			System.out.println("The category is " + currentCategory());
 			if (true) askQuestion();
 		}
-		
+
+		if (false) askQuestion();
 	}
 
 	private void askQuestion() {
