@@ -4,3 +4,10 @@ target/
 # Code health/design health reports generated from an Eclipse plugin
 Metrics/
 
+# Eclipse artifacts
+.classpath
+.project
+
+# IntelliJ IDEA artifacts
+.idea
+
