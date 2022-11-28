@@ -67,7 +67,9 @@ public class LockdownJunkDrawer {
         final ByteArrayOutputStream interceptedOutputStream = new ByteArrayOutputStream(1000000);
         System.setOut(new PrintStream(interceptedOutputStream));
 
+        System.out.println(String.format("----- begin game %d -----", 762));
         new GameRunner(new GameRunner.RandomizedGameEventSimulator(new Random(762))).runGame();
+        System.out.println(String.format("----- end game %d -----", 762));
 
         final String interceptedOutput = interceptedOutputStream.toString(Charset.forName("UTF-8").name());
         Approvals.verify(interceptedOutput);
