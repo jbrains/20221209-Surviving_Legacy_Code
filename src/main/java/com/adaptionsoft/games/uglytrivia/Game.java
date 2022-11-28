@@ -65,14 +65,13 @@ public class Game {
 						+ places[currentPlayer]);
 				System.out.println("The category is " + currentCategory());
 				shouldAskQuestionToCurrentPlayer = true;
-				if (shouldAskQuestionToCurrentPlayer) askQuestion();
 			} else {
 				System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
 				isGettingOutOfPenaltyBox = false;
 				shouldAskQuestionToCurrentPlayer = false;
-				if (shouldAskQuestionToCurrentPlayer) askQuestion();
 				}
 
+			if (shouldAskQuestionToCurrentPlayer) askQuestion();
 			shouldAskQuestionToCurrentPlayer = false;
 			if (shouldAskQuestionToCurrentPlayer) askQuestion();
 		} else {
