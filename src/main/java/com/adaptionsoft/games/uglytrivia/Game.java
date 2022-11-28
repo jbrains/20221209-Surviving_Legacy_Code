@@ -48,6 +48,11 @@ public class Game {
 	}
 
 	public void roll(int roll) {
+		boolean shouldAskQuestionToCurrentPlayer = rollWithoutAskingQuestion(roll);
+		if (shouldAskQuestionToCurrentPlayer) askQuestion();
+	}
+
+	public boolean rollWithoutAskingQuestion(int roll) {
 		System.out.println(players.get(currentPlayer) + " is the current player");
 		System.out.println("They have rolled a " + roll);
 
@@ -82,8 +87,7 @@ public class Game {
 			System.out.println("The category is " + currentCategory());
 			shouldAskQuestionToCurrentPlayer = true;
 		}
-
-		if (shouldAskQuestionToCurrentPlayer) askQuestion();
+		return shouldAskQuestionToCurrentPlayer;
 	}
 
 	private void askQuestion() {
