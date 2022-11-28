@@ -72,8 +72,6 @@ public class Game {
 				}
 
 			if (shouldAskQuestionToCurrentPlayer) askQuestion();
-			shouldAskQuestionToCurrentPlayer = false;
-			if (shouldAskQuestionToCurrentPlayer) askQuestion();
 		} else {
 
 			places[currentPlayer] = places[currentPlayer] + roll;
