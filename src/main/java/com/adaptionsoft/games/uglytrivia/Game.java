@@ -51,6 +51,7 @@ public class Game {
 		System.out.println(players.get(currentPlayer) + " is the current player");
 		System.out.println("They have rolled a " + roll);
 
+		boolean shouldAskQuestionToCurrentPlayer = false;
 		if (inPenaltyBox[currentPlayer]) {
 			if (roll % 2 != 0) {
 				isGettingOutOfPenaltyBox = true;
@@ -63,14 +64,17 @@ public class Game {
 						+ "'s new location is "
 						+ places[currentPlayer]);
 				System.out.println("The category is " + currentCategory());
-				if (true) askQuestion();
+				shouldAskQuestionToCurrentPlayer = true;
+				if (shouldAskQuestionToCurrentPlayer) askQuestion();
 			} else {
 				System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
 				isGettingOutOfPenaltyBox = false;
-				if (false) askQuestion();
+				shouldAskQuestionToCurrentPlayer = false;
+				if (shouldAskQuestionToCurrentPlayer) askQuestion();
 				}
 
-			if (false) askQuestion();
+			shouldAskQuestionToCurrentPlayer = false;
+			if (shouldAskQuestionToCurrentPlayer) askQuestion();
 		} else {
 
 			places[currentPlayer] = places[currentPlayer] + roll;
@@ -80,10 +84,12 @@ public class Game {
 					+ "'s new location is "
 					+ places[currentPlayer]);
 			System.out.println("The category is " + currentCategory());
-			if (true) askQuestion();
+			shouldAskQuestionToCurrentPlayer = true;
+			if (shouldAskQuestionToCurrentPlayer) askQuestion();
 		}
 
-		if (false) askQuestion();
+		shouldAskQuestionToCurrentPlayer = false;
+		if (shouldAskQuestionToCurrentPlayer) askQuestion();
 	}
 
 	private void askQuestion() {
