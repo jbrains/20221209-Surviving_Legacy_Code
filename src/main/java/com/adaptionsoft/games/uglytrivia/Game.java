@@ -52,11 +52,12 @@ public class Game {
 		if (shouldAskQuestionToCurrentPlayer) askQuestion();
 	}
 
+	// CONTRACT Answers whether to ask the current player a question.
+	// REFACTOR Replace boolean return value with an Enum or a Strategy.
 	public boolean rollWithoutAskingQuestion(int roll) {
 		System.out.println(players.get(currentPlayer) + " is the current player");
 		System.out.println("They have rolled a " + roll);
 
-		boolean shouldAskQuestionToCurrentPlayer;
 		if (inPenaltyBox[currentPlayer]) {
 			if (roll % 2 != 0) {
 				isGettingOutOfPenaltyBox = true;
@@ -69,11 +70,11 @@ public class Game {
 						+ "'s new location is "
 						+ places[currentPlayer]);
 				System.out.println("The category is " + currentCategory());
-				shouldAskQuestionToCurrentPlayer = true;
+				return true;
 			} else {
 				System.out.println(players.get(currentPlayer) + " is not getting out of the penalty box");
 				isGettingOutOfPenaltyBox = false;
-				shouldAskQuestionToCurrentPlayer = false;
+				return false;
 				}
 
 		} else {
@@ -85,9 +86,8 @@ public class Game {
 					+ "'s new location is "
 					+ places[currentPlayer]);
 			System.out.println("The category is " + currentCategory());
-			shouldAskQuestionToCurrentPlayer = true;
+			return true;
 		}
-		return shouldAskQuestionToCurrentPlayer;
 	}
 
 	private void askQuestion() {
