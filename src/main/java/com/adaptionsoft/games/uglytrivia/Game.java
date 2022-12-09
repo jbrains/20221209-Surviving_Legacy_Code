@@ -54,6 +54,8 @@ public class Game {
 		// The new way
 		final PlayerState newPlayerState = new PlayerState(playerName, 0, 0, false);
 		playerStates.add(newPlayerState);
+		// "number" means counting from 1 instead of 0.
+		final int numberOfNewPlayer = playerStates.size();
 
 		// The old way
 		final int indexOfNewPlayer = players.size();
@@ -62,7 +64,7 @@ public class Game {
 		purses[indexOfNewPlayer] = newPlayerState.goldCoins;
 		inPenaltyBox[indexOfNewPlayer] = newPlayerState.inPenaltyBox;
 
-		reportPlayerAdded(newPlayerState.name, indexOfNewPlayer + 1);
+		reportPlayerAdded(newPlayerState.name, numberOfNewPlayer);
 		return true;
 	}
 
