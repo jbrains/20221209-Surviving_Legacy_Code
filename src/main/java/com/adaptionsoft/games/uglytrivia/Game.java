@@ -55,23 +55,21 @@ public class Game {
 		final PlayerState playerState = new PlayerState(playerName, 0, 0, false);
 		playerStates.add(playerState);
 
+		final int indexOfNewPlayer = players.size();
+
 	    players.add(playerName);
-
-		// ---- TEMPORAL BARRIER
-		final int numberOfPlayersAfterAddingTheNewPlayer = players.size();
-
-		places[numberOfPlayersAfterAddingTheNewPlayer] = playerState.place;
-		purses[numberOfPlayersAfterAddingTheNewPlayer] = playerState.goldCoins;
-		inPenaltyBox[numberOfPlayersAfterAddingTheNewPlayer] = playerState.inPenaltyBox;
+		places[indexOfNewPlayer] = playerState.place;
+		purses[indexOfNewPlayer] = playerState.goldCoins;
+		inPenaltyBox[indexOfNewPlayer] = playerState.inPenaltyBox;
 		// END
 
-		reportPlayerAdded(playerName, numberOfPlayersAfterAddingTheNewPlayer);
+		reportPlayerAdded(playerName, indexOfNewPlayer + 1);
 		return true;
 	}
 
-	private static void reportPlayerAdded(String newPlayerName, int indexOfNewPlayer) {
+	private static void reportPlayerAdded(String newPlayerName, int numberOfNewPlayer) {
 		System.out.println(newPlayerName + " was added");
-		System.out.println("They are player number " + indexOfNewPlayer);
+		System.out.println("They are player number " + numberOfNewPlayer);
 	}
 
 	public int howManyPlayers() {

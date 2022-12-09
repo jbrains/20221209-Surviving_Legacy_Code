@@ -29,16 +29,15 @@ public class AddPlayersToGame {
             game.add(String.format("player %d", i));
         }
 
-        try {
-            game.add("player 6");
-            Assert.fail("Defect JBRAINS-720 appears to have been fixed.");
-        } catch (ArrayIndexOutOfBoundsException expected) {
-            Assert.assertEquals(
-                    Arrays.asList("player 1", "player 2", "player 3", "player 4", "player 5", "player 6"),
-                    game.playerStates
-                            .stream()
-                            .map(playerState -> playerState.name)
-                            .collect(Collectors.toList()));
-        }
+        game.add("player 6");
+        Assert.assertEquals(
+                Arrays.asList("player 1", "player 2", "player 3", "player 4", "player 5", "player 6"),
+                game.players);
+        Assert.assertEquals(
+                Arrays.asList("player 1", "player 2", "player 3", "player 4", "player 5", "player 6"),
+                game.playerStates
+                        .stream()
+                        .map(playerState -> playerState.name)
+                        .collect(Collectors.toList()));
     }
 }
