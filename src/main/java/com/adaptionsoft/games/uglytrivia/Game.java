@@ -39,12 +39,14 @@ public class Game {
 
 		// ---- TEMPORAL BARRIER
 
+		// BEGIN
 		final int numberOfPlayersAfterAddingTheNewPlayer = players.size();
 
 		// initialize the state of the new player
 		places[numberOfPlayersAfterAddingTheNewPlayer] = 0;
 		purses[numberOfPlayersAfterAddingTheNewPlayer] = 0;
 		inPenaltyBox[numberOfPlayersAfterAddingTheNewPlayer] = false;
+		// END
 
 		reportPlayerAdded(playerName, numberOfPlayersAfterAddingTheNewPlayer);
 		return true;
