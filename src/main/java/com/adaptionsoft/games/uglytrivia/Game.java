@@ -46,9 +46,13 @@ public class Game {
 		purses[numberOfPlayersAfterAddingTheNewPlayer] = 0;
 		inPenaltyBox[numberOfPlayersAfterAddingTheNewPlayer] = false;
 
-	    System.out.println(playerName + " was added");
-		System.out.println("They are player number " + numberOfPlayersAfterAddingTheNewPlayer);
+		reportPlayerAdded(playerName, numberOfPlayersAfterAddingTheNewPlayer);
 		return true;
+	}
+
+	private static void reportPlayerAdded(String newPlayerName, int indexOfNewPlayer) {
+		System.out.println(newPlayerName + " was added");
+		System.out.println("They are player number " + indexOfNewPlayer);
 	}
 
 	public int howManyPlayers() {
