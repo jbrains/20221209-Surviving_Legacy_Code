@@ -38,9 +38,9 @@ public class Game {
 	    players.add(playerName);
 	    places[howManyPlayers()] = 0;
 	    purses[howManyPlayers()] = 0;
-	    inPenaltyBox[howManyPlayers()] = false;
-
 		final int numberOfPlayers = players.size();
+		inPenaltyBox[numberOfPlayers] = false;
+
 	    System.out.println(playerName + " was added");
 		System.out.println("They are player number " + numberOfPlayers);
 		return true;
