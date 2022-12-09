@@ -56,15 +56,16 @@ public class Game {
 		playerStates.add(newPlayerState);
 		// "number" means counting from 1 instead of 0.
 		final int numberOfNewPlayer = playerStates.size();
+		reportPlayerAdded(newPlayerState.name, numberOfNewPlayer);
 
-		// The old way
+		// BEGIN Deprecated section. The old way of managing players.
 		final int indexOfNewPlayer = players.size();
 	    players.add(playerName);
 		places[indexOfNewPlayer] = newPlayerState.place;
 		purses[indexOfNewPlayer] = newPlayerState.goldCoins;
 		inPenaltyBox[indexOfNewPlayer] = newPlayerState.inPenaltyBox;
+		// END Deprecated section.
 
-		reportPlayerAdded(newPlayerState.name, numberOfNewPlayer);
 		return true;
 	}
 
