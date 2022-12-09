@@ -36,9 +36,11 @@ public class Game {
 
 	public static class PlayerState {
 		public final int place;
+		public final int goldCoins;
 
-		public PlayerState(int place) {
+		public PlayerState(int place, int goldCoins) {
 			this.place = place;
+			this.goldCoins = goldCoins;
 		}
 	}
 	public boolean add(String playerName) {
@@ -50,8 +52,9 @@ public class Game {
 		final int numberOfPlayersAfterAddingTheNewPlayer = players.size();
 
 		// initialize the state of the new player
-		final int startingPlace = new PlayerState(0).place;
-		final int startingNumberOfGoldCoins = 0;
+		final PlayerState playerState = new PlayerState(0, 0);
+		final int startingPlace = playerState.place;
+		final int startingNumberOfGoldCoins = playerState.goldCoins;
 		final boolean startingPenaltyBoxState = false;
 
 		places[numberOfPlayersAfterAddingTheNewPlayer] = startingPlace;
