@@ -54,13 +54,10 @@ public class Game {
 		final int numberOfPlayersAfterAddingTheNewPlayer = players.size();
 
 		final PlayerState playerState = new PlayerState(0, 0, false);
-		final int startingPlace = playerState.place;
-		final int startingNumberOfGoldCoins = playerState.goldCoins;
-		final boolean startingPenaltyBoxState = playerState.inPenaltyBox;
 
-		places[numberOfPlayersAfterAddingTheNewPlayer] = startingPlace;
-		purses[numberOfPlayersAfterAddingTheNewPlayer] = startingNumberOfGoldCoins;
-		inPenaltyBox[numberOfPlayersAfterAddingTheNewPlayer] = startingPenaltyBoxState;
+		places[numberOfPlayersAfterAddingTheNewPlayer] = playerState.place;
+		purses[numberOfPlayersAfterAddingTheNewPlayer] = playerState.goldCoins;
+		inPenaltyBox[numberOfPlayersAfterAddingTheNewPlayer] = playerState.inPenaltyBox;
 		// END
 
 		reportPlayerAdded(playerName, numberOfPlayersAfterAddingTheNewPlayer);
