@@ -58,15 +58,17 @@ public class Game {
 		final int numberOfNewPlayer = playerStates.size();
 		reportPlayerAdded(newPlayerState.name, numberOfNewPlayer);
 
-		// BEGIN Deprecated section. The old way of managing players.
+		deprecated_addPlayerToLegacyFields(playerName, newPlayerState);
+
+		return true;
+	}
+
+	private void deprecated_addPlayerToLegacyFields(String playerName, PlayerState newPlayerState) {
 		final int indexOfNewPlayer = players.size();
-	    players.add(playerName);
+		players.add(playerName);
 		places[indexOfNewPlayer] = newPlayerState.place;
 		purses[indexOfNewPlayer] = newPlayerState.goldCoins;
 		inPenaltyBox[indexOfNewPlayer] = newPlayerState.inPenaltyBox;
-		// END Deprecated section.
-
-		return true;
 	}
 
 	// "number" means counting from 1 instead of 0.
