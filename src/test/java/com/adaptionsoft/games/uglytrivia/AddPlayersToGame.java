@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 // SMELL Depends on package-visible properties of Game.
 public class AddPlayersToGame {
@@ -13,6 +14,12 @@ public class AddPlayersToGame {
         game.add("player 1");
 
         Assert.assertEquals(Arrays.asList("player 1"), game.players);
+        Assert.assertEquals(
+                Arrays.asList("player 1"),
+                game.playerStates
+                        .stream()
+                        .map(playerState -> playerState.name)
+                        .collect(Collectors.toList()));
     }
 
     @Test
@@ -26,6 +33,12 @@ public class AddPlayersToGame {
             game.add("player 6");
             Assert.fail("Defect JBRAINS-720 appears to have been fixed.");
         } catch (ArrayIndexOutOfBoundsException expected) {
+            Assert.assertEquals(
+                    Arrays.asList("player 1", "player 2", "player 3", "player 4", "player 5", "player 6"),
+                    game.playerStates
+                            .stream()
+                            .map(playerState -> playerState.name)
+                            .collect(Collectors.toList()));
         }
     }
 }

@@ -2,8 +2,11 @@ package com.adaptionsoft.games.uglytrivia;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Game {
+	// Mirrors players, places, purses, inPenaltyBox.
+	final List<PlayerState> playerStates = new ArrayList<PlayerState>();
     ArrayList players = new ArrayList();
     int[] places = new int[6];
     int[] purses  = new int[6];
@@ -35,11 +38,13 @@ public class Game {
 	}
 
 	public static class PlayerState {
+		public final String name;
 		public final int place;
 		public final int goldCoins;
 		public final boolean inPenaltyBox;
 
-		public PlayerState(int place, int goldCoins, boolean inPenaltyBox) {
+		public PlayerState(String name, int place, int goldCoins, boolean inPenaltyBox) {
+			this.name = name;
 			this.place = place;
 			this.goldCoins = goldCoins;
 			this.inPenaltyBox = inPenaltyBox;
@@ -48,12 +53,12 @@ public class Game {
 	public boolean add(String playerName) {
 	    players.add(playerName);
 
-		// ---- TEMPORAL BARRIER
-
 		// BEGIN
-		final int numberOfPlayersAfterAddingTheNewPlayer = players.size();
+		final PlayerState playerState = new PlayerState(playerName, 0, 0, false);
+		playerStates.add(playerState);
 
-		final PlayerState playerState = new PlayerState(0, 0, false);
+		// ---- TEMPORAL BARRIER
+		final int numberOfPlayersAfterAddingTheNewPlayer = players.size();
 
 		places[numberOfPlayersAfterAddingTheNewPlayer] = playerState.place;
 		purses[numberOfPlayersAfterAddingTheNewPlayer] = playerState.goldCoins;
