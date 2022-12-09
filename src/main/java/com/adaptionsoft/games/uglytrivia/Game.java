@@ -52,17 +52,17 @@ public class Game {
 	}
 	public boolean add(String playerName) {
 		// The new way
-		final PlayerState playerState = new PlayerState(playerName, 0, 0, false);
-		playerStates.add(playerState);
+		final PlayerState newPlayerState = new PlayerState(playerName, 0, 0, false);
+		playerStates.add(newPlayerState);
 
 		// The old way
 		final int indexOfNewPlayer = players.size();
 	    players.add(playerName);
-		places[indexOfNewPlayer] = playerState.place;
-		purses[indexOfNewPlayer] = playerState.goldCoins;
-		inPenaltyBox[indexOfNewPlayer] = playerState.inPenaltyBox;
+		places[indexOfNewPlayer] = newPlayerState.place;
+		purses[indexOfNewPlayer] = newPlayerState.goldCoins;
+		inPenaltyBox[indexOfNewPlayer] = newPlayerState.inPenaltyBox;
 
-		reportPlayerAdded(playerName, indexOfNewPlayer + 1);
+		reportPlayerAdded(newPlayerState.name, indexOfNewPlayer + 1);
 		return true;
 	}
 
