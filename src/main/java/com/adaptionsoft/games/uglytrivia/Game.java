@@ -51,11 +51,11 @@ public class Game {
 		}
 	}
 	public boolean add(String playerName) {
-	    players.add(playerName);
-
 		// BEGIN
 		final PlayerState playerState = new PlayerState(playerName, 0, 0, false);
 		playerStates.add(playerState);
+
+	    players.add(playerName);
 
 		// ---- TEMPORAL BARRIER
 		final int numberOfPlayersAfterAddingTheNewPlayer = players.size();
