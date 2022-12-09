@@ -53,7 +53,6 @@ public class Game {
 		// BEGIN
 		final int numberOfPlayersAfterAddingTheNewPlayer = players.size();
 
-		// initialize the state of the new player
 		final PlayerState playerState = new PlayerState(0, 0, false);
 		final int startingPlace = playerState.place;
 		final int startingNumberOfGoldCoins = playerState.goldCoins;
