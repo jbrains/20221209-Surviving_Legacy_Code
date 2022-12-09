@@ -51,22 +51,22 @@ public class Game {
 		}
 	}
 	public boolean add(String playerName) {
-		// BEGIN
+		// The new way
 		final PlayerState playerState = new PlayerState(playerName, 0, 0, false);
 		playerStates.add(playerState);
 
+		// The old way
 		final int indexOfNewPlayer = players.size();
-
 	    players.add(playerName);
 		places[indexOfNewPlayer] = playerState.place;
 		purses[indexOfNewPlayer] = playerState.goldCoins;
 		inPenaltyBox[indexOfNewPlayer] = playerState.inPenaltyBox;
-		// END
 
 		reportPlayerAdded(playerName, indexOfNewPlayer + 1);
 		return true;
 	}
 
+	// "number" means counting from 1 instead of 0.
 	private static void reportPlayerAdded(String newPlayerName, int numberOfNewPlayer) {
 		System.out.println(newPlayerName + " was added");
 		System.out.println("They are player number " + numberOfNewPlayer);
