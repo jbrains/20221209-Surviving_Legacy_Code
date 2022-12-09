@@ -34,6 +34,13 @@ public class Game {
 		return (howManyPlayers() >= 2);
 	}
 
+	public static class PlayerState {
+		public final int place;
+
+		public PlayerState(int place) {
+			this.place = place;
+		}
+	}
 	public boolean add(String playerName) {
 	    players.add(playerName);
 
@@ -43,7 +50,7 @@ public class Game {
 		final int numberOfPlayersAfterAddingTheNewPlayer = players.size();
 
 		// initialize the state of the new player
-		final int startingPlace = 0;
+		final int startingPlace = new PlayerState(0).place;
 		final int startingNumberOfGoldCoins = 0;
 		final boolean startingPenaltyBoxState = false;
 
