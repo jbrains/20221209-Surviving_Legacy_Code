@@ -37,6 +37,8 @@ public class Game {
 	public boolean add(String playerName) {
 	    players.add(playerName);
 
+		// ---- TEMPORAL BARRIER
+
 		final int numberOfPlayersAfterAddingTheNewPlayer = players.size();
 
 		// initialize the state of the new player
