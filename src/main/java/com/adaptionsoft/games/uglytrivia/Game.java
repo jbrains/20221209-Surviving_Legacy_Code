@@ -36,7 +36,10 @@ public class Game {
 
 	public boolean add(String playerName) {
 	    players.add(playerName);
+
 		final int numberOfPlayersAfterAddingTheNewPlayer = players.size();
+
+		// initialize the state of the new player
 		places[numberOfPlayersAfterAddingTheNewPlayer] = 0;
 		purses[numberOfPlayersAfterAddingTheNewPlayer] = 0;
 		inPenaltyBox[numberOfPlayersAfterAddingTheNewPlayer] = false;
@@ -45,7 +48,7 @@ public class Game {
 		System.out.println("They are player number " + numberOfPlayersAfterAddingTheNewPlayer);
 		return true;
 	}
-	
+
 	public int howManyPlayers() {
 		return players.size();
 	}
